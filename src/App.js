@@ -5,19 +5,18 @@ import './App.css';
 const App = ()=> {
   const [inputValue, setInputValue] = useState("")
   const [groceries, setGroceries] = useState([]) 
-  const listItems = groceries.map((grocery, i)=> <ul key={i}>{grocery}</ul>)
+  const listItems = groceries.map((grocery, i)=> <li key={i}>{grocery}</li>)
+
   
-
-
   const storeEnteredText = (e)=> {
     setInputValue(e.target.value)
+    
   }
 
   const handleButtonClick = (e)=> {
     setGroceries([...groceries, inputValue])
-
-  
   }
+
 
   return (
     <div className="App">
@@ -26,9 +25,8 @@ const App = ()=> {
       <h1>Grocery List</h1>
       <input className="textInput" onChange={storeEnteredText}></input>
       <button className="addBtn" onClick={handleButtonClick}>Add Item</button>
-      <form className="listForm">
-        <button className="listItems">{listItems}</button>
-      </form>
+      <ul className="listItems">{listItems}</ul>
+      
     </div>
   );
 }
