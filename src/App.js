@@ -5,7 +5,7 @@ import './App.css';
 const App = ()=> {
   const [inputValue, setInputValue] = useState("")
   const [groceries, setGroceries] = useState([]) 
-  const listItems = groceries.map((grocery, i)=> <li key={i}>{grocery}</li>)
+  const listItems = groceries.map((grocery, i)=> <li key={i}><span>{grocery}<input  className="check" type="checkbox" /></span></li>)
 
   
   const storeEnteredText = (e)=> {
